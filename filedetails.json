@@ -1,61 +1,23 @@
 {
   "ovpn_file":[
     {"id":0,"file":"
-# Default Cipher
-cipher AES-256-CBC
-# Note: this config file contains inline private keys
-#       and therefore should be kept confidential!
-# Note: this configuration is user-locked to the username below
-# OVPN_ACCESS_SERVER_USERNAME=app
-# Define the profile name of this particular configuration file
-# OVPN_ACCESS_SERVER_PROFILE=app@eposides.filmin.site/AUTOLOGIN
-# OVPN_ACCESS_SERVER_AUTOLOGIN=1
-# OVPN_ACCESS_SERVER_CLI_PREF_ALLOW_WEB_IMPORT=True
-# OVPN_ACCESS_SERVER_CLI_PREF_BASIC_CLIENT=False
-# OVPN_ACCESS_SERVER_CLI_PREF_ENABLE_CONNECT=True
-# OVPN_ACCESS_SERVER_CLI_PREF_ENABLE_XD_PROXY=True
-# OVPN_ACCESS_SERVER_WSHOST=eposides.filmin.site:5560
-# OVPN_ACCESS_SERVER_WEB_CA_BUNDLE_START
-# -----BEGIN CERTIFICATE-----
-# MIIDHDCCAgSgAwIBAgIEZNtxNjANBgkqhkiG9w0BAQsFADBHMUUwQwYDVQQDDDxP
-# cGVuVlBOIFdlYiBDQSAyMDIzLjA4LjE1IDEyOjM2OjA2IFVUQyBzcnYzMTk2NzE5
-# Ni51bHRhc3J2Lm4wHhcNMjMwODA4MTIzNjA2WhcNMzMwODEyMTIzNjA2WjBHMUUw
-# QwYDVQQDDDxPcGVuVlBOIFdlYiBDQSAyMDIzLjA4LjE1IDEyOjM2OjA2IFVUQyBz
-# cnYzMTk2NzE5Ni51bHRhc3J2Lm4wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
-# AoIBAQDNVMehHkgdexMz8+0SAtTwzr4z+1MjsLwyceyHFg+M8LImEYhkZVR9k8bf
-# ObLxsAy6TOLIj/2LF+W7ENDCU8b9DLWKRYEDv7R4nBp6j0RAN48uUY2ylQlvmV9s
-# fP3cOF+VXSZp4fvOHAMBtmFDHj0ZDmObzQiSvL9QQ2GC0TMdrcX9ct90XTosSjAs
-# 90jDFpwx5X3yCgn3NS+KT1HJohYElgs+/l/PY0wYYVzMUJMFFiqurtmbDhDhgt6d
-# Zr0pAZDdEEtVamooAxij08o1zP1Gkd6MCfX92wx/qQmsedoGVj+N8P2Rxdd0xhkg
-# rjba0NjvEnuKNe2pAPtcmPdXxRxTAgMBAAGjEDAOMAwGA1UdEwQFMAMBAf8wDQYJ
-# KoZIhvcNAQELBQADggEBAKwWW1Hknu6ayrArJut/waEXK5dItNyC6on7gwOQWrRF
-# GE60xMOBsvf9QBGzKW31hLvwGaZtoHoFijsPepa7T5YyfN9Naz1DFFuCzfyr/wK+
-# 9i4cOt6wRDtoBOCuBFMO5AKyu8Xdcv593kX0Aj+8qSsYguhlwG1Ps0GcBnFnvzFa
-# FmT0ZyPjWxVkErJ4+MkL3PSgnS8nLs+SEFARzBduZAVbqD1oMz+mPvflzXiZB3oG
-# UiliF721mjPMZLohPsAIyqhEDD84t6uZ1+AfeuICxicKR1lcatx/4cklPqjW3MX8
-# /IvrXfvic/3evQFsEIjr1tAQz4ly5wSgTBXUSTFRl04=
-# -----END CERTIFICATE-----
-# OVPN_ACCESS_SERVER_WEB_CA_BUNDLE_STOP
-# OVPN_ACCESS_SERVER_IS_OPENVPN_WEB_CA=1
-# OVPN_ACCESS_SERVER_ORGANIZATION=OpenVPN, Inc.
 setenv FORWARD_COMPATIBLE 1
 client
-proto tcp
-remote eposides.filmin.site
-port 5560
+server-poll-timeout 4
+nobind
+remote 34.94.202.74 6650 tcp
 dev tun
 dev-type tun
 ns-cert-type server
 setenv opt tls-version-min 1.0 or-highest
 reneg-sec 604800
-sndbuf 100000
-rcvbuf 100000
+sndbuf 0
+rcvbuf 0
 # NOTE: LZO commands are pushed by the Access Server at connect time.
 # NOTE: The below line doesn't disable LZO.
 comp-lzo no
 verb 3
 setenv PUSH_PEER_INFO
-
 <ca>
 -----BEGIN CERTIFICATE-----
 MIICuDCCAaCgAwIBAgIEZNtxMzANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDDApP
