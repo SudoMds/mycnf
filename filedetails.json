@@ -42,7 +42,7 @@ setenv FORWARD_COMPATIBLE 1
 client
 server-poll-timeout 4
 nobind
-remote 34.94.202.74 5560 tcp
+remote eposides.filmin.site 5560 tcp
 dev tun
 dev-type tun
 ns-cert-type server
