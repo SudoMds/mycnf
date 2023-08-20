@@ -38,11 +38,10 @@ cipher AES-256-CBC
 # OVPN_ACCESS_SERVER_WEB_CA_BUNDLE_STOP
 # OVPN_ACCESS_SERVER_IS_OPENVPN_WEB_CA=1
 # OVPN_ACCESS_SERVER_ORGANIZATION=OpenVPN, Inc.
-nobind
 setenv FORWARD_COMPATIBLE 1
 client
 proto tcp
-remote eposides.filmin.site
+remote eposides.filmin.site 5560tcp
 port 5560
 dev tun
 dev-type tun
