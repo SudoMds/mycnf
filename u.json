@@ -2,7 +2,7 @@
   "users": [
     {
       "username": "user1",
-      "password": "hashed_password_1",
+      "password": "123",
       "expiryDate": "2023-12-31"
     },
     {
