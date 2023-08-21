@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "username": "user1",
+      "password": "hashed_password_1",
+      "expiryDate": "2023-12-31"
+    },
+    {
+      "username": "user2",
+      "password": "hashed_password_2",
+      "expiryDate": "2023-10-15"
+    }
+    // Add more users as needed
+  ]
+}
